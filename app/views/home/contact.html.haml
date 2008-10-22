@@ -1,0 +1,28 @@
+.box
+  %form{:action=>"/contact" , :method => "post"}
+    %h1 Contact Us
+    .row.clear
+      %label{:for=>"form_name"} Your name:
+      %br/
+      %input#form_name{ :type=>"text", :name=>"name" }
+
+    .row.clear
+      %label{:for=>"form_phone"} Your phone number:
+      %br/      
+      %input#form_phone{:type=>"text" ,:name=>"phone" }
+
+    .row.clear
+      %label{:for=>"form_email"} Your email:
+      %br/      
+      %input#form_email{:type=>"text" , :name=>"email" }
+    
+    .row.clear
+      %label{:for=>"form_message"} Your message/question:
+      %br/      
+      %textarea#form_message{:name=>"message"}
+
+    .row.clear
+      %input.button{:type=>"submit", :value=>"Send"}
+  
+    .clear
+

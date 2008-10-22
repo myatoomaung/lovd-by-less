@@ -1,0 +1,11 @@
+- blogs ||= @blogs
+- @count = blogs.total_entries
+
+- unless blogs.empty? 
+  #column_r.right
+    .activity_box
+      %h2 Blog Post History
+      #post_history
+        = blogs_li blogs 
+
+      = will_paginate blogs

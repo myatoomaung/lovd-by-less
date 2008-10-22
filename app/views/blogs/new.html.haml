@@ -1,0 +1,7 @@
+%h1 New Post
+#sub_nav
+  = link_to('&larr; Back to Dashboard', @p) if @p
+  = link_to '&larr; Back to Blogs', profile_blogs_path(@p) unless @p.blogs.empty? 
+
+= render :partial => 'form' 
+

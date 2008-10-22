@@ -1,0 +1,11 @@
+- comment = feed_item.item
+
+.feed_item.comment_feed{:id=> feed_item.dom_id}
+  .left
+    
+    %img{ :src=>"/images/blurp_comment.png" ,:class=>"png icon_small" ,:title=>"User Comment Icon", :alt=>"User Comment Icon" }
+    = commentable_text comment 
+
+  .right
+    = x_feed_link(feed_item) if me 
+  .clear

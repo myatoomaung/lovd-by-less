@@ -1,0 +1,18 @@
+- profile ||= @profile
+- size ||= 10
+- blogs ||= profile.blogs.find( :all, :limit => size )
+- total = profile.blogs.count
+
+
+- unless( blogs.empty? )
+  .activity_box
+    %h2
+      Most Recent Blog Posts 
+      %span
+        == (latest #{ blogs.size } of #{ total > size ? link_to( total, profile_blogs_path(profile)) : total})
+
+    .inside_box
+      %ul
+        = blogs_li blogs
+
+      .clear

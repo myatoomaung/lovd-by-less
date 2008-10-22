@@ -1,0 +1,9 @@
+.newest_member.clear
+  .left= icon newest_member
+  
+  .left{:style=>"margin-left: 10px;"}
+    = link_to h(newest_member.f), newest_member
+    %small
+      = h(newest_member.location) || 'Nowhere'
+
+  .clear

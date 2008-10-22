@@ -1,0 +1,8 @@
+.activity_box
+  %h2 Search Results
+  - @results.each do |r| 
+    .search_row.left.text_c
+      %div= icon r
+      %div= link_to h(r.f), r 
+    
+  = will_paginate @results 

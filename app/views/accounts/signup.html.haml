@@ -1,0 +1,28 @@
+- terms_of_service_label = "Accept #{link_to 'Terms of Service', tos_path, :target => 'blank'}"
+
+#login_form
+  - less_form_for :user, :url => signup_path, :method => :post do |f| 
+    %h1 Sign-up Now
+
+    .instruction== Welcome to #{ SITE_NAME }, we are currently in private beta.
+    .instruction= link_to "Oh yeah, I already have an account, duh.", login_url
+
+    = f.text_field :login 
+    = f.text_field :email 
+    = f.password_field :password 
+    = f.password_field :password_confirmation, :label => 'Confirm Password' 
+
+    /.row.clear
+    /  = less_reverse_captcha_field(:user)
+      
+    
+    .row.clear
+      = f.label(:terms_of_service, :label => terms_of_service_label)
+      = check_box_tag :user_terms_of_service, 1, params[:terms_of_service], :class => 'checkbox', :name => 'user[terms_of_service]'
+    .row.clear
+      = f.label(:remember_me, :label => :remember_me)
+      = check_box_tag :remember_me, 1, params[:remember_me], :class=>"checkbox left"
+    .clear
+    .button
+      = f.submit 'Sign-up Now', :class => 'button'
+
